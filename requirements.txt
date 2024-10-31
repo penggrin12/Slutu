@@ -1,0 +1,2 @@
+https://github.com/LonamiWebs/Telethon/archive/v2.zip#subdirectory=client
+checksumdir
