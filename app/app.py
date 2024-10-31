@@ -24,9 +24,7 @@ class Slutu:
 
     def __init__(self) -> None:
         self.version = (0, 0, 1)
-        self.dirhash: str = checksumdir.dirhash(
-            Path(".") / Path("app"), excluded_extensions=["pyc"]
-        )
+        self.dirhash: str = utils.get_app_hash()
         self.logger = utils.get_logger(self)
         self.client = Client(
             "slutu",
