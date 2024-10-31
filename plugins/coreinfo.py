@@ -21,5 +21,8 @@ class CoreInfo(SlutuPlugin):
         if message.text.startswith(";info"):
             await utils.answer(
                 message,
-                html=f"Slutu {'.'.join(map(str, self.slutu.version))} [<code>{self.slutu.dirhash[:6]}</code>...]",
+                html=(
+                    f"Slutu {'.'.join(map(str, self.slutu.version))} [<code>{self.slutu.dirhash[:6]}</code>...]"
+                    f"\n\nLoaded plugins:\n{', '.join(x.__class__.__name__ for x in self.loader.plugins)}",
+                ),
             )
